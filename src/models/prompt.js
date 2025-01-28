@@ -10,6 +10,10 @@ const Prompt = sequelize.define('Prompt', {
         type: DataTypes.INTEGER,
         allowNull: false,
     },
+    name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
     assistantId: {
         type: DataTypes.INTEGER,
         allowNull: false,
