@@ -1,8 +1,8 @@
 const express = require('express');
 const assistantsRoutes = require('./routes/assistantsRoutes');
 const promptsRoutes = require('./routes/promptsRoutes');
-const filesRoutes = require('./routes/filesRoutes');
 const userRoutes = require('./routes/usersRoutes');
+const setupSwaggerDocs = require('./swagger'); // Importar configuración de Swagger
 
 const app = express();
 
@@ -13,5 +13,8 @@ app.use(express.json());
 app.use('/api/users', userRoutes);
 app.use('/api/assistants', assistantsRoutes);
 app.use('/api/prompts', promptsRoutes);
+
+// Configurar Swagger
+setupSwaggerDocs(app);
 
 module.exports = app;

@@ -78,7 +78,7 @@
 const express = require('express');
 const { createUser, getAllUsers, getUserAssistants } = require('../controllers/usersController');
 const router = express.Router();
-const { isAdmin } = require('../middlewares/auth');
+const { isAdmin } = require('../middleware/auth');
 
 router.post('/', createUser);
 router.get('/', isAdmin, getAllUsers);

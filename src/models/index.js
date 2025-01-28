@@ -10,7 +10,6 @@ Assistant.belongsTo(User, { foreignKey: 'userId' });
 Assistant.hasMany(Prompt, { foreignKey: 'assistantId', onDelete: 'CASCADE' });
 Prompt.belongsTo(Assistant, { foreignKey: 'assistantId' });
 
-
 // Sincroniza modelos con la base de datos
 const syncDatabase = async () => {
   try {
@@ -21,4 +20,9 @@ const syncDatabase = async () => {
   }
 };
 
-module.exports = { sequelize, User, Assistant, Prompt, syncDatabase };
+module.exports = {
+  User,
+  Assistant,
+  Prompt,
+  syncDatabase,
+};
